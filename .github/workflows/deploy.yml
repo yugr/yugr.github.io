@@ -28,12 +28,14 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: |
+          cd recovering-teamlead
+          hugo --minify
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
-          cp -R public/* $GITHUB_WORKSPACE/built-site
+          cp -R recovering-teamlead/public/* $GITHUB_WORKSPACE/built-site/recovering-teamlead
           cd $GITHUB_WORKSPACE/built-site
           git add .
           git config user.name 'Yuri Gribov'
