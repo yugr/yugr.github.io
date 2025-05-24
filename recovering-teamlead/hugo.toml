@@ -1,4 +1,4 @@
-baseURL = 'https://github.com/yugr/yugr.github.io/recovering-teamlead'
+baseURL = 'https://yugr.github.io/recovering-teamlead/'
 languageCode = 'en-us'
 title = 'Recovering Teamlead Blog'
 author = 'Yuri "yugr" Gribov'
