@@ -11,7 +11,7 @@ NAME=recovering-teamlead
 DESC='Recovering Teamlead Blog'
 
 BASE='/'
-#BASE='https://yugr.github.io/recovering-teamlead'
+#BASE='https://yugr.github.io/recovering-teamlead/'
 
 # Good
 THEME_REPO=https://github.com/athul/archie  # 1k
