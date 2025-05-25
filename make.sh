@@ -37,7 +37,7 @@ hugo new site $NAME
 
 cd $NAME
 
-git submodule add --depth=1 $THEME_REPO themes/$THEME
+git submodule add --force --depth=1 $THEME_REPO themes/$THEME
 
 sed -i -e "s!^\(baseURL *= *\).*!\1'$BASE'!" hugo.toml
 sed -i -e "s/^\(title *= *\).*/\1'$DESC'/" hugo.toml
