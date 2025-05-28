@@ -5,6 +5,9 @@ on:
       - main
   pull_request:
 
+env:
+  BLOG_NAME: recovering-teamlead
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -29,15 +32,16 @@ jobs:
 
       - name: Build
         run: |
-          cd recovering-teamlead
+          cd $BLOG_NAME
           hugo --minify
 
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
           cd $GITHUB_WORKSPACE/built-site
-          git rm -r recovering-teamlead
-          cp -r $GITHUB_WORKSPACE/recovering-teamlead/public recovering-teamlead
+          git rm -r $BLOG_NAME
+          mkdir -p $BLOG_NAME
+          cp -r $GITHUB_WORKSPACE/$BLOG_NAME/public/* $BLOG_NAME
           git add .
           git config user.name 'Yuri Gribov'
           git config user.email 'tetra2005@gmail.com'
