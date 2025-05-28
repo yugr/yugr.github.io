@@ -35,8 +35,9 @@ jobs:
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
-          cp -R recovering-teamlead/public/* $GITHUB_WORKSPACE/built-site/recovering-teamlead
           cd $GITHUB_WORKSPACE/built-site
+          git rm -r recovering-teamlead
+          cp -r $GITHUB_WORKSPACE/recovering-teamlead/public recovering-teamlead
           git add .
           git config user.name 'Yuri Gribov'
           git config user.email 'tetra2005@gmail.com'
